@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
     s.homepage     = 'https://github.com/pilot34/Libxml2Module'
     s.license      = 'MIT'
     s.author       = { "gtarasov" => "gleb34@gmail.com" }
-    s.source       = { git: 'git@github.com:Agisight/Libxml2Module.git', branch: "develop-Xcode14" }
+    s.source       = { git: 'git@github.com:Agisight/Libxml2Module.git' }
     s.platform     = :ios, '11.0'
     
 
