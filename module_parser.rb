@@ -6,7 +6,6 @@ device_suffix = "device"
 
 def light_process_contents(contents, suffix)
     contents = contents.gsub(/\#include <libxml\/(.*?)\.h>/, "#import \"\\1-#{suffix}.h\"")
-#    contents = contents.gsub(/\#include <(.*?)\.h>/, '@import \1;')
 
     return contents
 end
