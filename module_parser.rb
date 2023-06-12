@@ -12,7 +12,7 @@ end
 
 def process_contents(contents, suffix)
     contents = light_process_contents(contents, suffix)
-    contents = contents.gsub(/\#include <(.*?)\.h>/, '@import Darwin.C.\1;')
+#    contents = contents.gsub(/\#include <(.*?)\.h>/, '@import Darwin.C.\1;')
 
     return contents
 end
