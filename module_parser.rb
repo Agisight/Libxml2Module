@@ -12,7 +12,7 @@ end
 
 def process_contents(contents, suffix)
     contents = light_process_contents(contents, suffix)
-#    contents = contents.gsub(/\#include <(.*?)\.h>/, '@import Darwin.C.\1;')
+    contents = contents.gsub(/\#include <(.*?)\.h>/, '@import Darwin.C.\1;')
 
     return contents
 end
@@ -29,9 +29,9 @@ def process_folder(headers_folder, local_folder, suffix)
         local = fname.sub(/\.h/, "-#{suffix}.h")
         imports += "    header \"#{local}\"\n"
 
-        puts fname
         contents = File.read(File.join(headers_folder, fname))
-        if fname == "xmlversion-device.h" then #Don`t change library prefix by "Darwin.C"
+        puts fname
+        if fname == "xmlversion.h" then #Don`t change library prefix by "Darwin.C"
             contents = light_process_contents(contents, suffix)
         else
             contents = process_contents(contents, suffix)
