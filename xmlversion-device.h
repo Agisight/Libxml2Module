@@ -12,9 +12,9 @@
 
 #import "xmlexports-device.h"
 
-#if defined(__APPLE__) && defined(TARGET_OS_MAC)
-@import Darwin.C.Availability;
-@import Darwin.C.TargetConditionals;
+#ifdef __APPLE__
+#include <Availability.h>
+#include <TargetConditionals.h>
 #endif
 
 #ifdef __cplusplus
