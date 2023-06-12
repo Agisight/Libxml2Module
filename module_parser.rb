@@ -30,7 +30,6 @@ def process_folder(headers_folder, local_folder, suffix)
         imports += "    header \"#{local}\"\n"
 
         contents = File.read(File.join(headers_folder, fname))
-        puts fname
         if fname == "xmlversion.h" then #Don`t change library prefix by "Darwin.C"
             contents = light_process_contents(contents, suffix)
         else
