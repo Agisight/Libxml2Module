@@ -11,7 +11,7 @@ def light_process_contents(contents, suffix)
 end
 
 def process_contents(contents, suffix)
-    contents = contents.gsub(/\#include <libxml\/(.*?)\.h>/, "#import \"\\1-#{suffix}.h\"")
+    contents = light_process_contents(contents, suffix)
     contents = contents.gsub(/\#include <(.*?)\.h>/, '@import Darwin.C.\1;')
 
     return contents
@@ -30,7 +30,7 @@ def process_folder(headers_folder, local_folder, suffix)
         imports += "    header \"#{local}\"\n"
 
         contents = File.read(File.join(headers_folder, fname))
-        if fname == "xmlversion-device.h"
+        if fname == "xmlversion.h"
             contents = light_process_contents(contents, suffix)
         else
             contents = process_contents(contents, suffix)
